@@ -1,8 +1,7 @@
-import languages from './languages.js'
+import languages from './languages.js';
 
-import generateApp from './generateApp.js'
+import generateApp from './generateApp.js';
 
-const rusKeyboard = languages.rus
-const engKeyboard = languages.eng
+const engKeyboard = languages.eng;
 
-generateApp(engKeyboard)
+generateApp(engKeyboard);

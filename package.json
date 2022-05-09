@@ -1,6 +1,6 @@
 {
   "scripts": {
-  "linter": "eslint --fix '*/.js' --ignore-pattern node_modules/"
+  "linter": "eslint --fix **/*.js --ignore-pattern node_modules/"
 },
 "devDependencies": {
   "eslint": "^8.15.0",
