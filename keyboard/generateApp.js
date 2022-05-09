@@ -1,8 +1,8 @@
 import generateKeyboard from './generateKb.js'
-import languages from './languages.js';
 
 
-export default () => {
+
+export default (languages) => {
   const container = document.createElement('div');
   container.classList.add('container');
 
@@ -13,7 +13,7 @@ export default () => {
     textWrapper.dataset.position = e.target.selectionStart
   })
 
-  const keyboard = generateKeyboard(languages.eng, textWrapper)
+  const keyboard = generateKeyboard(textWrapper)
 
   const info = document.createElement('div')
   info.classList.add('body')
@@ -25,6 +25,8 @@ export default () => {
   container.append(keyboard);
   container.append(info);
   document.body.append(container);
+
+  textWrapper.focus()
 
   }
 

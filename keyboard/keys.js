@@ -5,7 +5,7 @@ export default class KeyboardKey {
     this.code = code;
 }
 
-  generate() {
+  generate(charCase) {
     const key = document.createElement('button')
     key.classList.add('keyboard__key')
     key.dataset.keycode = this.code
@@ -19,9 +19,12 @@ export default class KeyboardKey {
         key.classList.add('tab__key');
         key.innerText = this.small
         break;
+        case 'Delete':
+        key.innerText = this.small
+        break;
       case 'CapsLock':
         key.classList.add('caps__key');
-        key.innerText = this.small
+        key.innerText = 'Del'
         break;
       case 'Enter':
         key.classList.add('enter__key');
@@ -31,6 +34,24 @@ export default class KeyboardKey {
         key.classList.add('shift__key', 'shift__key--left');
         key.innerText = this.small
         break;
+        case 'ShiftRight':
+        key.innerText = this.small
+        break;
+        case 'MetaLeft':
+            key.innerText = 'Win'
+      break;
+      case 'ControlLeft':
+        key.innerText = this.small
+        break
+    case 'ControlRight':
+        key.innerText = this.small
+      break;
+      case 'AltLeft':
+        key.innerText = this.small
+        break;
+    case 'AltRight':
+        key.innerText = this.small
+      break;
       case 'Space':
         key.classList.add('space__key');
         key.innerText = this.small

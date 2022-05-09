@@ -464,7 +464,7 @@ export default {
       code: 'Backslash',
     },
     {
-      small: 'Delete',
+      small: 'Del',
       shift: null,
       code: 'Delete',
     }],
@@ -599,12 +599,12 @@ export default {
       code: 'ShiftRight',
     }],
     [{
-      small: 'Control',
+      small: 'Ctrl',
       shift: null,
       code: 'ControlLeft',
     },
     {
-      small: 'Meta',
+      small: 'Win',
       shift: null,
       code: 'MetaLeft',
     },
@@ -624,6 +624,11 @@ export default {
       code: 'AltRight',
     },
     {
+      small: 'Ctrl',
+      shift: null,
+      code: 'ControlRight',
+    },
+    {
       small: 'ArrowLeft',
       shift: null,
       code: 'ArrowLeft',
@@ -638,10 +643,6 @@ export default {
       shift: null,
       code: 'ArrowRight',
     },
-    {
-      small: 'Control',
-      shift: null,
-      code: 'ControlRight',
-    }],
+    ],
   ],
 };
