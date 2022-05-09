@@ -75,7 +75,10 @@ width: 100%;
 .keyboard__row {
 display: flex;
 }
-
+.keyboard__key.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
 .keyboard__key {
 font-family: inherit;
 font-size: inherit;
@@ -93,7 +96,7 @@ border-radius: 15px;
 border: 0;
 }
 .keyboard__key:hover {
-background-color: rgba(156, 154, 154, 0.2) ;
+background-color: rgba(140, 131, 131, 0.153) ;
 }
 
 .keyboard__key:active {

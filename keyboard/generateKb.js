@@ -1,10 +1,10 @@
 import KeyboardKey from "./keys.js"
 
-function keyboardHandler(event, textWrapper) {
+function keyboardHandler(keycode, value, textWrapper) {
   const text = textWrapper
   let start = text.dataset.position
   let end = text.dataset.position
-  switch (event.target.dataset.keycode) {
+  switch (keycode) {
     case 'Backspace':
         text.value = `${text.value.slice(0, start - 1)}${text.value.slice(end)}`
         text.dataset.position = text.dataset.position > 0 ? +text.dataset.position - 1 : 0
@@ -31,7 +31,7 @@ function keyboardHandler(event, textWrapper) {
     case 'ArrowRight':
       break
     default:
-      text.value = `${text.value.slice(0, start)}${event.target.innerText}${text.value.slice(end)}`
+      text.value = `${text.value.slice(0, start)}${value}${text.value.slice(end)}`
       text.dataset.position = +text.dataset.position + 1
       
 }
@@ -53,11 +53,30 @@ export default (kbLng, textWrapper) => {
 
     keyboard.append(row)
   })
+
   keyboard.addEventListener('click', (e) => {
     if (e.target.dataset.keycode) {
-      keyboardHandler(e, textWrapper)  
-    }
-    
+       
+        const keycode = e.target.dataset.keycode
+        const value = e.target.innerText
+      keyboardHandler(keycode, value, textWrapper)  
+    }})
+
+    window.addEventListener('keydown', (e) => {
+        e.preventDefault()
+        const key = document.querySelector(`[data-keycode=${e.code}]`)
+        if (key) {
+            key.classList.add('active')
+          const keycode = key.dataset.keycode
+          const value = key.innerText
+          keyboardHandler(keycode, value, textWrapper)
+        }})
+        
+    window.addEventListener('keyup', (e) => {
+        const key = document.querySelector(`[data-keycode=${e.code}]`)
+        if (key) {
+            key.classList.remove('active')
+        }
   })
 
   return keyboard
