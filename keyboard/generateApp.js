@@ -8,8 +8,12 @@ export default () => {
 
   const textWrapper = document.createElement('textarea');
   textWrapper.classList.add('text');
+  textWrapper.dataset.position = 0;
+  textWrapper.addEventListener('click', (e) => {
+    textWrapper.dataset.position = e.target.selectionStart
+  })
 
-  const keyboard = generateKeyboard(languages.eng)
+  const keyboard = generateKeyboard(languages.eng, textWrapper)
 
   const info = document.createElement('div')
   info.classList.add('body')

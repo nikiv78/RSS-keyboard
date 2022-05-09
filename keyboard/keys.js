@@ -8,6 +8,7 @@ export default class KeyboardKey {
   generate() {
     const key = document.createElement('button')
     key.classList.add('keyboard__key')
+    key.dataset.keycode = this.code
 
     switch (this.code) {
       case 'Backspace':
